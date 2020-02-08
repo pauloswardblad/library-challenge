@@ -2,6 +2,7 @@ require './lib/library.rb'
 
 describe Library do
   
+
   it 'has a list of books' do
     expect(subject.index).not_to be nil
   end
@@ -39,6 +40,9 @@ describe Library do
     
   end
 =end
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d5e183041dd7239a44acef56e71b1866342962f3
 end
