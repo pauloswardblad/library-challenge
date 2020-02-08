@@ -47,7 +47,7 @@ end
 end
 
 # to see index in irb p @index = YAML.load_file('./lib/data.yml')
-
+#correcting, pushing up so i can get the new file from blake
 
 
 >>>>>>> d5e183041dd7239a44acef56e71b1866342962f3
