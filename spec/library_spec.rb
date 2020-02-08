@@ -42,9 +42,4 @@ describe Library do
     
   end
 =end
-<<<<<<< HEAD
-
-
-=======
->>>>>>> d5e183041dd7239a44acef56e71b1866342962f3
 end
