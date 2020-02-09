@@ -1,5 +1,6 @@
 require './lib/library.rb'
 require 'yaml'
+#require 'date'
 
 describe Library do
 
@@ -17,20 +18,27 @@ describe Library do
   end
 
 
-  it 'can check if the book is available' do
-        expected_output = YAML.load_file('./lib/data.yml').select { |book| book[:available] == true }
-        expect(subject.index).to eq expected_output
+  #it 'can check if the book is available' do
+        #expected_output = YAML.load_file('./lib/data.yml').select { |book| book[:available] == false }
+        #expect(subject.index).to eq expected_output
         #expect(subject.index[2][:item][:available]).to eq ("true") #be_truthy
-  end
+  #end
   
   
   #it 'can generate checkout date' do
     
   #end
 
+  it 'can generate a return date' do
+      return_date = Date.today.next_month(1).strftime('%y-%m-%d')
+      expect(subject.return_date).to eq return_date  
+  end
   #it 'can generate return date' do
-        #expected_output = YAML.load_file('./lib/data.yml').select { |returnbook| item[:return_date] == return_date }
-        #expect(subject.index).to eq expected_output
+      #subject.return_date(0)
+      #expect(subject.index[0][:return_date]).to eq Date.today.next_month(1).strftime('%y-%m-%d')  
+            
+      #expected_output = YAML.load_file('./lib/data.yml').select { |returnbook| item[:return_date] == return_date }
+      #expect(subject.index).to eq expected_output
   #end
 =begin
   it 'when book checked out availability changes to unavailable' do
