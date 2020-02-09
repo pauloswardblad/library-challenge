@@ -14,7 +14,7 @@ class Library
       @index = create_index()
   end
 
-  def create_index #initialize
+  def create_index 
         @index = YAML.load_file('./lib/data.yml')
   end
 
@@ -26,8 +26,13 @@ class Library
         @index.select { [:item][:author].include? "#{author}" }
   end
 
+  def book_available?(available)
+      @index.select != :available
+      #book_status != :available
+  end
+  
   #def is_available(available)
-        #@index.select { |book| book[:available] == false }
+        #@index.select { |book| book[:available] == true }
         #index.select { [:item][:available].to eq? "true" } #to be_truthy? "#{available}" } 
   #end
 
@@ -39,11 +44,7 @@ class Library
       Date.today.next_month(STANDARD_RETURN_DATE).strftime('%y-%m-%d')
   end
   
-  #def return_date(return_date)
-      #self.index { [book][:item][:return_date] = Date.today.next_month(Library::STANDARD_RETURN_DATE).strftime('%y-%m-%d') }
-        #File.open('./lib/data.yml', 'w') { |f| f.write index.to_yaml }  
-            #Date.today.next_month (Library::STANDARD_VAILIDITY_DATE).strftime('%m/%y')
-  #end
+ 
 
 
 
@@ -54,4 +55,8 @@ end
 
 #>>>>>>> d5e183041dd7239a44acef56e71b1866342962f
 
-      
+#def return_date(return_date)
+      #self.index { [book][:item][:return_date] = Date.today.next_month(Library::STANDARD_RETURN_DATE).strftime('%y-%m-%d') }
+        #File.open('./lib/data.yml', 'w') { |f| f.write index.to_yaml }  
+            #Date.today.next_month (Library::STANDARD_VAILIDITY_DATE).strftime('%m/%y')
+#end
