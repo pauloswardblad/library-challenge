@@ -2,33 +2,25 @@ require 'yaml'
 require 'date'
 
 class Library
-#<<<<<<< HEAD
 
   attr_accessor :index
 
-  
-
   STANDARD_RETURN_DATE = 1
-  
-  def initialize 
-      @index = create_index()
-  end
 
   def create_index 
         @index = YAML.load_file('./lib/data.yml')
   end
 
-  def query_title(title) 
-        @index.select { [:item][:title].include? "#{title}" }
+  def query_title(title)
+      index.select { [:title].include? "#{title}" }
   end
   
   def query_author(author)
-        @index.select { [:item][:author].include? "#{author}" }
+    index.select { [:author].include? "#{author}" }
   end
 
-  def book_available?(available)
-      @index.select != :available
-      #book_status != :available
+  def is_available(available)
+    index.select { [:available] }
   end
   
   #def is_available(available)
@@ -36,9 +28,8 @@ class Library
         #index.select { [:item][:available].to eq? "true" } #to be_truthy? "#{available}" } 
   #end
 
-  #def checkout_date()
-        #empty
-  #end
+
+  #dependent on checkout
 
   def return_date
       Date.today.next_month(STANDARD_RETURN_DATE).strftime('%y-%m-%d')
@@ -52,8 +43,6 @@ end
 
 # to see index in irb p @index = YAML.load_file('./lib/data.yml')
 
-
-#>>>>>>> d5e183041dd7239a44acef56e71b1866342962f
 
 #def return_date(return_date)
       #self.index { [book][:item][:return_date] = Date.today.next_month(Library::STANDARD_RETURN_DATE).strftime('%y-%m-%d') }

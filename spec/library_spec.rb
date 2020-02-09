@@ -18,28 +18,23 @@ describe Library do
   end
 
 
-  #it 'can check if the book is available' do
-        #expected_output = YAML.load_file('./lib/data.yml').select { |book| book[:available] == true }
-        #expect(subject.index).to eq expected_output
-        #expect(subject.index[2][:item][:available]).to eq ("true") #be_truthy
-  #end
-  
   it 'can check if the book is available' do
-      allow(available).to receive(:available.and_return(:disabled)
-      expected_output = { status: available, }
-      expect(subject.index)
+    expected_output = true
+    expect(subject.index[0][:item][:available]).to eq expected_output
   end
+  
 
   #it 'can generate checkout date' do
     
   #end
 
-  it 'can generate a return date' do
-      return_date = Date.today.next_month(1).strftime('%y-%m-%d')
-      expect(subject.return_date).to eq return_date  
+  it 'can generate return date' do
+    return_date = Date.today.next_month(1).strftime('%y-%m-%d')
+    expect(subject.return_date).to eq return_date
   end
-  
+
 =begin
+
   it 'when book checked out availability changes to unavailable' do
     
   end
