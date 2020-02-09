@@ -35,7 +35,4 @@ class Library
   end
   
  
-
-
-
 end
