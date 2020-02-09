@@ -1,6 +1,6 @@
 require './lib/library.rb'
 require 'yaml'
-#require 'date'
+
 
 describe Library do
 
@@ -47,12 +47,5 @@ describe Library do
     
   end
 =end
-end
 
-#it 'can generate return date' do
-      #subject.return_date(0)
-      #expect(subject.index[0][:return_date]).to eq Date.today.next_month(1).strftime('%y-%m-%d')  
-            
-      #expected_output = YAML.load_file('./lib/data.yml').select { |returnbook| item[:return_date] == return_date }
-      #expect(subject.index).to eq expected_output
-  #end
+end
