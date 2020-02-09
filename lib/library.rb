@@ -36,6 +36,10 @@ class Library
     index.select { [:available] == false }
   end
 
+  def is_available(available)
+    index.select { [:available] }
+  end
+
 end
 
 # to see index in irb p @index = YAML.load_file('./lib/data.yml')

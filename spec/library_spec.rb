@@ -11,18 +11,15 @@ describe Library do
     expect(subject.index[1][:item][:title]).to include("Skratta la")
   end
 
-
   it 'can search book list by author' do
     expect(subject.index[2][:item][:author]).to include("Gunilla")
   end
-
 
   it 'can check if the book is available' do
     expected_output = true
     expect(subject.index[0][:item][:available]).to eq expected_output
   end
   
-
   #it 'can generate checkout date' do
     
   #end
@@ -37,11 +34,11 @@ describe Library do
     expect(subject.index[0][:available]).to be_falsey
   end
 
-=begin
   it 'when book returned availability changes to available' do
-    
+    expected_output = true
+    expect(subject.index[0][:item][:available]).to eq expected_output
   end
-
+=begin
   it 'when checkout occurs, visitor pinged return date information' do
     
   end
