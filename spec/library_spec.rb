@@ -32,12 +32,12 @@ describe Library do
     expect(subject.return_date).to eq return_date
   end
 
-=begin
-
   it 'when book checked out availability changes to unavailable' do
-    
+    subject.is_unavailable(0)
+    expect(subject.index[0][:available]).to be_falsey
   end
 
+=begin
   it 'when book returned availability changes to available' do
     
   end

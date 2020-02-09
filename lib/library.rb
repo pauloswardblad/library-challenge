@@ -26,10 +26,14 @@ class Library
 
   end
 
-
   #dependent on checkout
+
   def return_date
     Date.today.next_month(STANDARD_RETURN_DATE).strftime('%y-%m-%d')
+  end
+
+  def is_unavailable(unavailable)
+    index.select { [:available] == false }
   end
 
 end
