@@ -39,7 +39,7 @@ describe Library do
   end
 
   it 'when book returned availability changes to available' do
-    
+    #kjflakjdf
   end
 
   it 'when checkout occurs, visitor pinged return date information' do
