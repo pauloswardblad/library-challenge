@@ -22,23 +22,29 @@ class Library
     index.select { [:available] }
   end
 
-  def checkout_book
+=begin  WIP
+    
+Need to write to yaml faile
 
-  end
+  # def checkout_book(num)
+  #     @index[(num)][:available] = false
+  #     @index[(num)][:return_date] = required_return_date
+  #     File.open('./lib/data.yml', 'w') { |f| f.write @index.to_yaml }
+  # end
 
-  #dependent on checkout
+  # def checkin_book(num)
+  #   @index[(num)][:available] = true
+  #   @index[(num)][:return_date] = nil
+  #   File.open('./lib/data.yml', 'w') { |f| f.write @index.to_yaml }
+  # end
 
-  def return_date
+Need to set add 1 month to checkout date
+
+  def required_return_date
     Date.today.next_month(STANDARD_RETURN_DATE).strftime('%y-%m-%d')
   end
 
-  def is_unavailable(unavailable)
-    index.select { [:available] == false }
-  end
-
-  def is_available(available)
-    index.select { [:available] }
-  end
+=end
 
 end
 
